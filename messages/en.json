@@ -1,0 +1,19 @@
+{
+  "admin/navigation.label": "Seller Addons",
+  "admin/registration.seller.addons.title": "Seller Addons Registration",
+  "admin/update.seller.addons.title": "Edit Seller Addons",
+  "admin/upload.banner.label": "Choose banner image",
+  "admin/edit.seller.addons.success.message": "Seller Addons saved successfully.",
+  "admin/delete.seller.addons.label": "Delete Seller Addons",
+  "admin/delete.seller.addons.question": "Are you sure you want to delete seller addons?",
+  "admin/delete.seller.addons.confirmation": "Yes, remove all addons",
+  "admin/delete.seller.addons.success.message": "Seller Addons deleted successfully.",
+  "admin/seller.addons.description": "Description",
+  "admin/seller.addons.deliveryPolicy": "Delivery Policy",
+  "admin/seller.addons.exchangeReturnPolicy": "Exchange and Return Policy",
+  "admin/seller.addons.securityPrivacyPolicy": "Security and Privacy Policy",
+  "admin/loading.label": "Loading",
+  "admin/discard.label": "Discard changes",
+  "admin/cancel.label": "Cancel",
+  "admin/save.label": "Save"
+}

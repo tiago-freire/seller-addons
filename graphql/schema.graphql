@@ -1,0 +1,15 @@
+type Query {
+  getSellerAddon(id: ID): SellerAddon
+}
+
+type Mutation {
+  addSellerAddon(
+    sellerAddon: NewSellerAddonInput!
+  ): SellerAddon!
+
+  updateSellerAddon(
+    sellerAddon: UpdateSellerAddonInput!
+  ): SellerAddon!
+
+  deleteSellerAddon(id: ID!): ID!
+}

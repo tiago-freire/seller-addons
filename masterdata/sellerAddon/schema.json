@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Seller Addon",
+  "type": "object",
+  "properties": {
+    "logo": {
+      "type": "string",
+      "title": "Seller Logo"
+    },
+    "description": {
+      "type": "string",
+      "title": "Seller Description"
+    },
+    "deliveryPolicy": {
+      "type": "string",
+      "title": "Seller Delivery Policy"
+    },
+    "exchangeReturnPolicy": {
+      "type": "string",
+      "title": "Seller Exchange and Return Policy"
+    },
+    "securityPrivacyPolicy": {
+      "type": "string",
+      "title": "Seller Security and Privacy Policy"
+    },
+    "banner": {
+      "type": "string",
+      "format": "data-url",
+      "title": "Seller Banner Image File"
+    }
+  },
+  "v-cache": false
+}

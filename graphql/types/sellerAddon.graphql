@@ -1,0 +1,28 @@
+input NewSellerAddonInput {
+  logo: String
+  description: String
+  deliveryPolicy: String
+  exchangeReturnPolicy: String
+  securityPrivacyPolicy: String
+  banner: String
+}
+
+input UpdateSellerAddonInput {
+  id: ID!
+  logo: String
+  description: String
+  deliveryPolicy: String
+  exchangeReturnPolicy: String
+  securityPrivacyPolicy: String
+  banner: String
+}
+
+type SellerAddon {
+  id: ID
+  logo: String
+  description: String
+  deliveryPolicy: String
+  exchangeReturnPolicy: String
+  securityPrivacyPolicy: String
+  banner: String
+}

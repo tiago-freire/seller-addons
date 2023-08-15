@@ -1,0 +1,3 @@
+mutation deleteSellerAddon($id: ID!) {
+  deleteSellerAddon(id: $id)
+}

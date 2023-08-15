@@ -1,0 +1,19 @@
+{
+  "admin/navigation.label": "Seller Addons",
+  "admin/registration.seller.addons.title": "Cadastro de Extensões do Seller",
+  "admin/update.seller.addons.title": "Editar Extensões do Seller",
+  "admin/upload.banner.label": "Escolha a imagem do banner",
+  "admin/edit.seller.addons.success.message": "Extensões do Seller salvas com sucesso.",
+  "admin/delete.seller.addons.label": "Excluir Extensões do Seller",
+  "admin/delete.seller.addons.question": "Você tem certeza de que deseja excluir as extensões do seller?",
+  "admin/delete.seller.addons.confirmation": "Sim, remover todas as extensões",
+  "admin/delete.seller.addons.success.message": "Extensões do Seller excluídas com sucesso.",
+  "admin/seller.addons.description": "Descrição",
+  "admin/seller.addons.deliveryPolicy": "Política de Entregas",
+  "admin/seller.addons.exchangeReturnPolicy": "Política de Trocas e Devoluções",
+  "admin/seller.addons.securityPrivacyPolicy": "Política de Privacidade e Segurança",
+  "admin/loading.label": "Carregando",
+  "admin/discard.label": "Descartar mudanças",
+  "admin/cancel.label": "Cancelar",
+  "admin/save.label": "Salvar"
+}

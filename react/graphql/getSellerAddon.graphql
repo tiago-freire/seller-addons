@@ -1,0 +1,11 @@
+query getSellerAddon($id: ID) {
+  getSellerAddon(id: $id) {
+    id
+    logo
+    description
+    deliveryPolicy
+    exchangeReturnPolicy
+    securityPrivacyPolicy
+    banner
+  }
+}

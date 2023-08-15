@@ -1,0 +1,6 @@
+{
+  "admin.app.seller-addons": {
+    "component": "SellerAddonsPage",
+    "path": "/admin/app/seller-addons"
+  }
+}

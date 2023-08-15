@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "@vtex/clients": "^2.17.0",
+    "co-body": "^6.0.0",
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "@types/co-body": "^0.0.3",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^12.0.0",
+    "@types/ramda": "types/npm-ramda#dist",
+    "@vtex/api": "6.45.19",
+    "@vtex/test-tools": "^3.4.1",
+    "@vtex/tsconfig": "^0.5.6",
+    "ssesandbox04.seller-addons": "https://tiago--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.0+build1692051724/public/@types/ssesandbox04.seller-addons",
+    "typescript": "3.9.7",
+    "vtex.breadcrumb": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb",
+    "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@1.0.0/public/@types/vtex.css-handles",
+    "vtex.file-manager-graphql": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.file-manager-graphql@0.3.0/public/@types/vtex.file-manager-graphql",
+    "vtex.flex-layout": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.flex-layout@0.21.3/public/@types/vtex.flex-layout",
+    "vtex.order-manager": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.12.0/public/@types/vtex.order-manager",
+    "vtex.product-summary": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary@2.83.1/public/@types/vtex.product-summary",
+    "vtex.responsive-layout": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.responsive-layout@0.1.4/public/@types/vtex.responsive-layout",
+    "vtex.rich-text": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.rich-text@0.16.0/public/@types/vtex.rich-text",
+    "vtex.search-result": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-result@3.124.0/public/@types/vtex.search-result",
+    "vtex.session-client": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.session-client@1.0.2/public/@types/vtex.session-client",
+    "vtex.store": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store@2.131.1/public/@types/vtex.store",
+    "vtex.store-components": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-components@3.169.0/public/@types/vtex.store-components",
+    "vtex.store-icons": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-icons@0.18.0/public/@types/vtex.store-icons",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit --pretty",
+    "test": "vtex-test-tools test --collectCoverage"
+  }
+}

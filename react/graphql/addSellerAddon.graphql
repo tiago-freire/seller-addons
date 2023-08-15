@@ -1,0 +1,27 @@
+mutation addSellerAddon(
+  $logo: String
+  $description: String
+  $deliveryPolicy: String
+  $exchangeReturnPolicy: String
+  $securityPrivacyPolicy: String
+  $banner: String
+) {
+  addSellerAddon(
+    sellerAddon: {
+      logo: $logo
+      description: $description
+      deliveryPolicy: $deliveryPolicy
+      exchangeReturnPolicy: $exchangeReturnPolicy
+      securityPrivacyPolicy: $securityPrivacyPolicy
+      banner: $banner
+    }
+  ) {
+    id
+    logo
+    description
+    deliveryPolicy
+    exchangeReturnPolicy
+    securityPrivacyPolicy
+    banner
+  }
+}
