@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "title": "Seller Addons",
   "description": "Provide custom addons for sellers.",
+  "scripts": {
+    "postreleasy": "vtex publish --force"
+  },
   "dependencies": {
     "vtex.store": "2.x",
     "vtex.rich-text": "0.x",
