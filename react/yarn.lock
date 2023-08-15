@@ -5374,9 +5374,9 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
-"ssesandbox04.seller-addons@https://tiago--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.0+build1692051724/public/@types/ssesandbox04.seller-addons":
-  version "0.0.0"
-  resolved "https://tiago--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.0+build1692051724/public/@types/ssesandbox04.seller-addons#b066ad8992e0ec6fd30783c9a0eb929c7590123d"
+"ssesandbox04.seller-addons@https://development--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.1+build1692126398/public/@types/ssesandbox04.seller-addons":
+  version "0.0.1"
+  resolved "https://development--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.1+build1692126398/public/@types/ssesandbox04.seller-addons#ec4089634ab543d94cd8331e8bb6a7741731e4ee"
 
 ssf@~0.11.2:
   version "0.11.2"

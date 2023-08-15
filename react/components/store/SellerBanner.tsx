@@ -13,13 +13,15 @@ const SellerBanner = () => {
     notifyOnNetworkStatusChange: true,
   })
 
+  const bannerUrl = data?.getSellerAddon?.bannerUrl
   const banner = data?.getSellerAddon?.banner
+  const imageBanner = banner && <img src={banner} alt={account} />
 
-  if (banner) {
-    return <img src={banner} alt={account} />
+  if (bannerUrl && imageBanner) {
+    return <a href={bannerUrl}>{imageBanner}</a>
   }
 
-  return null
+  return imageBanner
 }
 
 export default SellerBanner

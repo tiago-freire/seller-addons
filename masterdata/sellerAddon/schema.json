@@ -27,6 +27,14 @@
       "type": "string",
       "format": "data-url",
       "title": "Seller Banner Image File"
+    },
+    "bannerUrl": {
+      "type": "string",
+      "title": "Seller Banner URL"
+    },
+    "orderByField": {
+      "type": "string",
+      "title": "Seller Products Order By"
     }
   },
   "v-cache": false

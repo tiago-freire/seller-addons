@@ -3,8 +3,10 @@ import {
   Button,
   Flex,
   Label,
+  Select,
   Skeleton,
   TextArea,
+  TextInput,
   useToast,
 } from '@vtex/admin-ui'
 import type { ApolloError } from 'apollo-client'
@@ -56,7 +58,12 @@ const SellerAddonsManager = () => {
     loading: loadingSellerAddon,
     data: dataSellerAddon,
     refetch: refetchSellerAddon,
-  } = useQuery<QuerySellerAddon>(GET_SELLER_ADDON, commonQueryOptions)
+  } = useQuery<QuerySellerAddon>(GET_SELLER_ADDON, {
+    ...commonQueryOptions,
+    variables: {
+      id: localStorage.getItem('sellerAddonId'),
+    },
+  })
 
   const [uploadFile, { loading: loadingUpload }] =
     useMutation<MutationUploadFile>(UPLOAD_FILE, commonQueryOptions)
@@ -73,6 +80,8 @@ const SellerAddonsManager = () => {
   const sellerAddon = dataSellerAddon?.getSellerAddon
   const [selectedBannerFile, setSelectedBannerFile] = useState<File>()
   const [formDescription, setFormDescription] = useState<string | undefined>()
+  const [formBannerUrl, setFormBannerUrl] = useState<string | undefined>()
+  const [formOrderByField, setFormOrderByField] = useState<string | undefined>()
   const [formDeliveryPolicy, setFormDeliveryPolicy] = useState<
     string | undefined
   >()
@@ -86,7 +95,6 @@ const SellerAddonsManager = () => {
   >()
 
   const [showModalDelete, setShowModalDelete] = useState(false)
-
   const [preview, setPreview] = useState('')
   const [discardBanner, setDiscardBanner] = useState(false)
 
@@ -95,6 +103,9 @@ const SellerAddonsManager = () => {
     discardBanner ||
     (formDescription !== undefined &&
       formDescription !== sellerAddon?.description) ||
+    (formBannerUrl !== undefined && formBannerUrl !== sellerAddon?.bannerUrl) ||
+    (formOrderByField !== undefined &&
+      formOrderByField !== sellerAddon?.orderByField) ||
     (formDeliveryPolicy !== undefined &&
       formDeliveryPolicy !== sellerAddon?.deliveryPolicy) ||
     (formExchangeReturnPolicy !== undefined &&
@@ -114,8 +125,6 @@ const SellerAddonsManager = () => {
     setDiscardBanner(false)
   }
 
-  const fileInputRef = useRef<HTMLInputElement>(null)
-
   const clearSelectedBannerFile = () => {
     URL.revokeObjectURL(preview)
     setSelectedBannerFile(undefined)
@@ -132,12 +141,14 @@ const SellerAddonsManager = () => {
     clearSelectedBannerFile()
     setDiscardBanner(false)
     setFormDescription(undefined)
+    setFormBannerUrl(undefined)
+    setFormOrderByField(undefined)
     setFormDeliveryPolicy(undefined)
     setFormExchangeReturnPolicy(undefined)
     setFormSecurityPrivacyPolicy(undefined)
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleAddOrUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
     const form = e.currentTarget
 
     e.preventDefault()
@@ -156,6 +167,8 @@ const SellerAddonsManager = () => {
 
     const formValues = {
       banner,
+      bannerUrl: formBannerUrl?.trim(),
+      orderByField: formOrderByField?.trim(),
       description: formDescription?.trim(),
       deliveryPolicy: formDeliveryPolicy?.trim(),
       exchangeReturnPolicy: formExchangeReturnPolicy?.trim(),
@@ -174,11 +187,12 @@ const SellerAddonsManager = () => {
         message: intl.formatMessage(messages.editSellerAddonSuccessMessage),
       })
 
-      await refetchSellerAddon({
-        id:
-          savedSellerAddon.addSellerAddon?.id ??
-          savedSellerAddon.updateSellerAddon?.id,
-      })
+      const id =
+        savedSellerAddon.addSellerAddon?.id ??
+        savedSellerAddon.updateSellerAddon?.id
+
+      localStorage.setItem('sellerAddonId', id ?? '')
+      await refetchSellerAddon({ id })
     }
 
     formSellerAddonsReset(form)
@@ -190,8 +204,8 @@ const SellerAddonsManager = () => {
       variables: { id: sellerAddon?.id },
     })
 
+    localStorage.removeItem('sellerAddonId')
     setShowModalDelete(false)
-
     document.documentElement.setAttribute('style', '')
 
     showToast({
@@ -203,6 +217,19 @@ const SellerAddonsManager = () => {
     await refetchSellerAddon()
   }
 
+  const orderByOptions: Array<keyof typeof messages> = [
+    'OrderByScoreDESC',
+    'OrderByPriceASC',
+    'OrderByPriceDESC',
+    'OrderByNameASC',
+    'OrderByNameDESC',
+    'OrderByReleaseDateDESC',
+    'OrderByBestDiscountDESC',
+    'OrderByTopSaleDESC',
+  ]
+
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
   return (
     <Box>
       {loadingSellerAddon ? (
@@ -210,11 +237,11 @@ const SellerAddonsManager = () => {
       ) : (
         <>
           <h2 className="c-action-primary mb4">
-            {sellerAddon
+            {sellerAddon?.id
               ? intl.formatMessage(messages.updateSellerAddonTitle)
               : intl.formatMessage(messages.registrationSellerAddonTitle)}
           </h2>
-          <form onSubmit={handleSubmit} encType="multipart/form-data">
+          <form onSubmit={handleAddOrUpdate} encType="multipart/form-data">
             <Flex direction="column">
               <Label className="c-muted-1" htmlFor="banner">
                 Banner:
@@ -253,13 +280,43 @@ const SellerAddonsManager = () => {
               </Flex>
             )}
             <Flex csx={{ marginTop: 16 }} direction="column">
+              <Label className="c-muted-1" htmlFor="bannerUrl">
+                {intl.formatMessage(messages.bannerUrlLabel)}:
+              </Label>
+              <TextInput
+                id="bannerUrl"
+                name="bannerUrl"
+                onChange={(e) => setFormBannerUrl(e.target.value)}
+                value={formBannerUrl ?? sellerAddon?.bannerUrl ?? ''}
+              />
+            </Flex>
+            <Flex csx={{ marginTop: 16 }} direction="column">
+              <Label className="c-muted-1" htmlFor="orderByField">
+                {intl.formatMessage(messages.orderByFieldLabel)}:
+              </Label>
+              <Select
+                id="orderByField"
+                name="orderByField"
+                value={
+                  formOrderByField ?? sellerAddon?.orderByField ?? undefined
+                }
+                onChange={(e) => setFormOrderByField(e.target.value)}
+              >
+                {orderByOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {intl.formatMessage(messages[option])}
+                  </option>
+                ))}
+              </Select>
+            </Flex>
+            <Flex csx={{ marginTop: 16 }} direction="column">
               <Label className="c-muted-1" htmlFor="description">
                 {intl.formatMessage(messages.sellerDescription)}:
               </Label>
               <TextArea
                 id="description"
                 name="description"
-                style={{ minHeight: 150 }}
+                style={{ height: 150 }}
                 onChange={(e) => setFormDescription(e.target.value)}
                 value={formDescription ?? sellerAddon?.description ?? ''}
               />
@@ -271,7 +328,7 @@ const SellerAddonsManager = () => {
               <TextArea
                 id="deliveryPolicy"
                 name="deliveryPolicy"
-                style={{ minHeight: 150 }}
+                style={{ height: 150 }}
                 onChange={(e) => setFormDeliveryPolicy(e.target.value)}
                 value={formDeliveryPolicy ?? sellerAddon?.deliveryPolicy ?? ''}
               />
@@ -283,7 +340,7 @@ const SellerAddonsManager = () => {
               <TextArea
                 id="exchangeReturnPolicy"
                 name="exchangeReturnPolicy"
-                style={{ minHeight: 150 }}
+                style={{ height: 150 }}
                 onChange={(e) => setFormExchangeReturnPolicy(e.target.value)}
                 value={
                   formExchangeReturnPolicy ??
@@ -299,7 +356,7 @@ const SellerAddonsManager = () => {
               <TextArea
                 id="securityPrivacyPolicy"
                 name="securityPrivacyPolicy"
-                style={{ minHeight: 150 }}
+                style={{ height: 150 }}
                 onChange={(e) => setFormSecurityPrivacyPolicy(e.target.value)}
                 value={
                   formSecurityPrivacyPolicy ??

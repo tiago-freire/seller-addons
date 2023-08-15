@@ -26,6 +26,36 @@ export const messages = defineMessages({
   uploadBannerLabel: {
     id: 'admin/upload.banner.label',
   },
+  bannerUrlLabel: {
+    id: 'admin/upload.banner.url.label',
+  },
+  orderByFieldLabel: {
+    id: 'admin/products.order.by.label',
+  },
+  OrderByReleaseDateDESC: {
+    id: 'admin/products.order.by.OrderByReleaseDateDESC',
+  },
+  OrderByBestDiscountDESC: {
+    id: 'admin/products.order.by.OrderByBestDiscountDESC',
+  },
+  OrderByPriceDESC: {
+    id: 'admin/products.order.by.OrderByPriceDESC',
+  },
+  OrderByPriceASC: {
+    id: 'admin/products.order.by.OrderByPriceASC',
+  },
+  OrderByNameASC: {
+    id: 'admin/products.order.by.OrderByNameASC',
+  },
+  OrderByNameDESC: {
+    id: 'admin/products.order.by.OrderByNameDESC',
+  },
+  OrderByScoreDESC: {
+    id: 'admin/products.order.by.OrderByScoreDESC',
+  },
+  OrderByTopSaleDESC: {
+    id: 'admin/products.order.by.OrderByTopSaleDESC',
+  },
   sellerDescription: {
     id: 'admin/seller.addons.description',
   },

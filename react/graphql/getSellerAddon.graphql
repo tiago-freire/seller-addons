@@ -7,5 +7,7 @@ query getSellerAddon($id: ID) {
     exchangeReturnPolicy
     securityPrivacyPolicy
     banner
+    bannerUrl
+    orderByField
   }
 }

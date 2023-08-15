@@ -6,6 +6,8 @@ mutation updateSellerAddon(
   $exchangeReturnPolicy: String
   $securityPrivacyPolicy: String
   $banner: String
+  $bannerUrl: String
+  $orderByField: String
 ) {
   updateSellerAddon(
     sellerAddon: {
@@ -16,6 +18,8 @@ mutation updateSellerAddon(
       exchangeReturnPolicy: $exchangeReturnPolicy
       securityPrivacyPolicy: $securityPrivacyPolicy
       banner: $banner
+      bannerUrl: $bannerUrl
+      orderByField: $orderByField
     }
   ) {
     id
@@ -25,5 +29,7 @@ mutation updateSellerAddon(
     exchangeReturnPolicy
     securityPrivacyPolicy
     banner
+    bannerUrl
+    orderByField
   }
 }
