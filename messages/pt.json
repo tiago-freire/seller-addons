@@ -1,10 +1,10 @@
 {
-  "admin/navigation.label": "Seller Addons",
+  "admin/navigation.label": "Extensões do Seller",
   "admin/registration.seller.addons.title": "Cadastro de Extensões do Seller",
   "admin/update.seller.addons.title": "Editar Extensões do Seller",
   "admin/upload.banner.label": "Escolha a imagem do banner",
   "admin/upload.banner.url.label": "URL do Banner",
-  "admin/products.order.by.label": "Ordenação dos Produtos",
+  "admin/products.order.by.label": "Ordenação dos Produtos na Página do Seller",
   "admin/products.order.by.OrderByScoreDESC": "Relevância",
   "admin/products.order.by.OrderByPriceASC": "Menor preço",
   "admin/products.order.by.OrderByPriceDESC": "Maior preço",

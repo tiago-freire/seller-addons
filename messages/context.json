@@ -4,7 +4,7 @@
   "admin/update.seller.addons.title": "Edit Seller Addons",
   "admin/upload.banner.label": "Choose banner image",
   "admin/upload.banner.url.label": "Banner URL",
-  "admin/products.order.by.label": "Products Order By",
+  "admin/products.order.by.label": "Products Sort By on Seller Page",
   "admin/products.order.by.OrderByScoreDESC": "Relevance",
   "admin/products.order.by.OrderByPriceASC": "Price: Low to High",
   "admin/products.order.by.OrderByPriceDESC": "Price: High to Low",
