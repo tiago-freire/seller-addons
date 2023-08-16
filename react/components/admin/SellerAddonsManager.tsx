@@ -219,13 +219,13 @@ const SellerAddonsManager = () => {
 
   const orderByOptions: Array<keyof typeof messages> = [
     'OrderByScoreDESC',
-    'OrderByPriceASC',
-    'OrderByPriceDESC',
-    'OrderByNameASC',
-    'OrderByNameDESC',
+    'OrderByTopSaleDESC',
     'OrderByReleaseDateDESC',
     'OrderByBestDiscountDESC',
-    'OrderByTopSaleDESC',
+    'OrderByPriceDESC',
+    'OrderByPriceASC',
+    'OrderByNameASC',
+    'OrderByNameDESC',
   ]
 
   const fileInputRef = useRef<HTMLInputElement>(null)
