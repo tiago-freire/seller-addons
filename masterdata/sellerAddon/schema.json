@@ -28,6 +28,11 @@
       "format": "data-url",
       "title": "Seller Banner Image File"
     },
+    "bannerMobile": {
+      "type": "string",
+      "format": "data-url",
+      "title": "Seller Banner Image File - Mobile"
+    },
     "bannerUrl": {
       "type": "string",
       "title": "Seller Banner URL"

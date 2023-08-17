@@ -29,7 +29,7 @@
     "@vtex/tsconfig": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.5",
     "graphql": "^14.6.0",
-    "ssesandbox04.seller-addons": "https://development--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.1+build1692126398/public/@types/ssesandbox04.seller-addons",
+    "ssesandbox04.seller-addons": "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons",
     "typescript": "3.9.7",
     "vtex.breadcrumb": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb",
     "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@1.0.0/public/@types/vtex.css-handles",

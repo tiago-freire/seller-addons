@@ -78,7 +78,11 @@ const SellerAddonsManager = () => {
     useMutation<MutationSellerAddon>(DELETE_SELLER_ADDON, commonQueryOptions)
 
   const sellerAddon = dataSellerAddon?.getSellerAddon
+
   const [selectedBannerFile, setSelectedBannerFile] = useState<File>()
+  const [selectedBannerFileMobile, setSelectedBannerFileMobile] =
+    useState<File>()
+
   const [formDescription, setFormDescription] = useState<string | undefined>()
   const [formBannerUrl, setFormBannerUrl] = useState<string | undefined>()
   const [formOrderByField, setFormOrderByField] = useState<string | undefined>()
@@ -96,11 +100,15 @@ const SellerAddonsManager = () => {
 
   const [showModalDelete, setShowModalDelete] = useState(false)
   const [preview, setPreview] = useState('')
+  const [previewMobile, setPreviewMobile] = useState('')
   const [discardBanner, setDiscardBanner] = useState(false)
+  const [discardBannerMobile, setDiscardBannerMobile] = useState(false)
 
   const fieldsChanged =
     !!selectedBannerFile ||
+    !!selectedBannerFileMobile ||
     discardBanner ||
+    discardBannerMobile ||
     (formDescription !== undefined &&
       formDescription !== sellerAddon?.description) ||
     (formBannerUrl !== undefined && formBannerUrl !== sellerAddon?.bannerUrl) ||
@@ -125,10 +133,30 @@ const SellerAddonsManager = () => {
     setDiscardBanner(false)
   }
 
+  const handleChangeUploadInputMobile = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = e?.target?.files?.[0]
+
+    if (!file) {
+      return
+    }
+
+    setSelectedBannerFileMobile(file)
+    setPreviewMobile(URL.createObjectURL(file))
+    setDiscardBannerMobile(false)
+  }
+
   const clearSelectedBannerFile = () => {
     URL.revokeObjectURL(preview)
     setSelectedBannerFile(undefined)
     setPreview('')
+  }
+
+  const clearSelectedBannerFileMobile = () => {
+    URL.revokeObjectURL(previewMobile)
+    setSelectedBannerFileMobile(undefined)
+    setPreviewMobile('')
   }
 
   const handleDeleteBanner = () => {
@@ -136,10 +164,17 @@ const SellerAddonsManager = () => {
     setDiscardBanner(true)
   }
 
+  const handleDeleteBannerMobile = () => {
+    clearSelectedBannerFileMobile()
+    setDiscardBannerMobile(true)
+  }
+
   const formSellerAddonsReset = (form?: HTMLFormElement | null) => {
     form?.reset()
     clearSelectedBannerFile()
+    clearSelectedBannerFileMobile()
     setDiscardBanner(false)
+    setDiscardBannerMobile(false)
     setFormDescription(undefined)
     setFormBannerUrl(undefined)
     setFormOrderByField(undefined)
@@ -154,19 +189,31 @@ const SellerAddonsManager = () => {
     e.preventDefault()
 
     let banner = discardBanner ? '' : undefined
+    let bannerMobile = discardBannerMobile ? '' : undefined
 
     if (selectedBannerFile) {
-      const { data: dataUploadFile, errors: errorsUpload } = await uploadFile({
+      const { data, errors } = await uploadFile({
         variables: { file: selectedBannerFile },
       })
 
-      if (!errorsUpload?.length && dataUploadFile?.uploadFile) {
-        banner = dataUploadFile.uploadFile.fileUrl
+      if (!errors?.length && data?.uploadFile) {
+        banner = data.uploadFile.fileUrl
+      }
+    }
+
+    if (selectedBannerFileMobile) {
+      const { data, errors } = await uploadFile({
+        variables: { file: selectedBannerFileMobile },
+      })
+
+      if (!errors?.length && data?.uploadFile) {
+        bannerMobile = data.uploadFile.fileUrl
       }
     }
 
     const formValues = {
       banner,
+      bannerMobile,
       bannerUrl: formBannerUrl?.trim(),
       orderByField: formOrderByField?.trim(),
       description: formDescription?.trim(),
@@ -229,6 +276,7 @@ const SellerAddonsManager = () => {
   ]
 
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const fileInputRefMobile = useRef<HTMLInputElement>(null)
 
   return (
     <Box>
@@ -242,43 +290,92 @@ const SellerAddonsManager = () => {
               : intl.formatMessage(messages.registrationSellerAddonTitle)}
           </h2>
           <form onSubmit={handleAddOrUpdate} encType="multipart/form-data">
-            <Flex direction="column">
-              <Label className="c-muted-1" htmlFor="banner">
-                Banner:
-              </Label>
-              <div className="w-auto">
-                <ButtonWithIcon
-                  icon={<IconImage />}
-                  variation="secondary"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="ml4"
-                >
-                  {intl.formatMessage(messages.uploadBannerLabel)}
-                </ButtonWithIcon>
-                <input
-                  ref={fileInputRef}
-                  id="banner"
-                  onChange={handleChangeUploadInput}
-                  type="file"
-                  className="dn"
-                />
-              </div>
-            </Flex>
-            {(!!preview || sellerAddon?.banner) && !discardBanner && (
-              <Flex csx={{ gap: 4, marginTop: 16 }} align="center">
-                <img
-                  style={{ maxHeight: 480, maxWidth: '90%' }}
-                  src={(preview || sellerAddon?.banner) ?? undefined}
-                  alt="Banner"
-                />
-                <ButtonWithIcon
-                  variation="danger"
-                  size="small"
-                  onClick={handleDeleteBanner}
-                  icon={<IconDelete />}
-                />
+            <Flex csx={{ gap: 4 }}>
+              <Flex csx={{ width: '67%' }} direction="column">
+                <Label className="c-muted-1" htmlFor="banner">
+                  {intl.formatMessage(messages.bannerLabel)}:
+                </Label>
+                <div>
+                  <ButtonWithIcon
+                    icon={<IconImage />}
+                    variation="secondary"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    {intl.formatMessage(messages.uploadBannerLabel)}
+                  </ButtonWithIcon>
+                  <input
+                    ref={fileInputRef}
+                    id="banner"
+                    onChange={handleChangeUploadInput}
+                    type="file"
+                    className="dn"
+                  />
+                </div>
+                {(!!preview || sellerAddon?.banner) && !discardBanner && (
+                  <>
+                    <Flex csx={{ marginTop: 16 }}>
+                      <img
+                        style={{ maxHeight: 480 }}
+                        src={(preview || sellerAddon?.banner) ?? undefined}
+                        alt="Banner"
+                      />
+                    </Flex>
+                    <Flex csx={{ marginTop: 1 }}>
+                      <ButtonWithIcon
+                        variation="danger"
+                        size="small"
+                        onClick={handleDeleteBanner}
+                        icon={<IconDelete />}
+                      />
+                    </Flex>
+                  </>
+                )}
               </Flex>
-            )}
+              <Flex csx={{ width: '33%' }} direction="column">
+                <Label className="c-muted-1" htmlFor="bannerMobile">
+                  {intl.formatMessage(messages.bannerLabelMobile)}:
+                </Label>
+                <div>
+                  <ButtonWithIcon
+                    icon={<IconImage />}
+                    variation="secondary"
+                    onClick={() => fileInputRefMobile.current?.click()}
+                  >
+                    {intl.formatMessage(messages.uploadBannerLabelMobile)}
+                  </ButtonWithIcon>
+                  <input
+                    ref={fileInputRefMobile}
+                    id="bannerMobile"
+                    onChange={handleChangeUploadInputMobile}
+                    type="file"
+                    className="dn"
+                  />
+                </div>
+                {(!!previewMobile || sellerAddon?.bannerMobile) &&
+                  !discardBannerMobile && (
+                    <>
+                      <Flex csx={{ marginTop: 16 }}>
+                        <img
+                          style={{ maxHeight: 480 }}
+                          src={
+                            (previewMobile || sellerAddon?.bannerMobile) ??
+                            undefined
+                          }
+                          alt="Banner Mobile"
+                        />
+                      </Flex>
+                      <Flex csx={{ marginTop: 1 }}>
+                        <ButtonWithIcon
+                          variation="danger"
+                          size="small"
+                          onClick={handleDeleteBannerMobile}
+                          icon={<IconDelete />}
+                        />
+                      </Flex>
+                    </>
+                  )}
+              </Flex>
+            </Flex>
             <Flex csx={{ marginTop: 16 }} direction="column">
               <Label className="c-muted-1" htmlFor="bannerUrl">
                 {intl.formatMessage(messages.bannerUrlLabel)}:

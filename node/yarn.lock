@@ -5679,9 +5679,9 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-"ssesandbox04.seller-addons@https://development--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.1+build1692126398/public/@types/ssesandbox04.seller-addons":
-  version "0.0.1"
-  resolved "https://development--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.0.1+build1692126398/public/@types/ssesandbox04.seller-addons#ec4089634ab543d94cd8331e8bb6a7741731e4ee"
+"ssesandbox04.seller-addons@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons":
+  version "0.1.2"
+  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons#9418189227d5954fe6c88719ced39d8f94166641"
 
 sshpk@^1.7.0:
   version "1.17.0"

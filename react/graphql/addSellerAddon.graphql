@@ -5,6 +5,7 @@ mutation addSellerAddon(
   $exchangeReturnPolicy: String
   $securityPrivacyPolicy: String
   $banner: String
+  $bannerMobile: String
   $bannerUrl: String
   $orderByField: String
 ) {
@@ -16,6 +17,7 @@ mutation addSellerAddon(
       exchangeReturnPolicy: $exchangeReturnPolicy
       securityPrivacyPolicy: $securityPrivacyPolicy
       banner: $banner
+      bannerMobile: $bannerMobile
       bannerUrl: $bannerUrl
       orderByField: $orderByField
     }
@@ -27,6 +29,7 @@ mutation addSellerAddon(
     exchangeReturnPolicy
     securityPrivacyPolicy
     banner
+    bannerMobile
     bannerUrl
     orderByField
   }

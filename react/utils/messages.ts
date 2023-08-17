@@ -23,8 +23,17 @@ export const messages = defineMessages({
   updateSellerAddonTitle: {
     id: 'admin/update.seller.addons.title',
   },
+  bannerLabel: {
+    id: 'admin/banner.label',
+  },
+  bannerLabelMobile: {
+    id: 'admin/bannerMobile.label',
+  },
   uploadBannerLabel: {
     id: 'admin/upload.banner.label',
+  },
+  uploadBannerLabelMobile: {
+    id: 'admin/upload.bannerMobile.label',
   },
   bannerUrlLabel: {
     id: 'admin/upload.banner.url.label',

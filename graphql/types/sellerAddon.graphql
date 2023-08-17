@@ -5,6 +5,7 @@ input NewSellerAddonInput {
   exchangeReturnPolicy: String
   securityPrivacyPolicy: String
   banner: String
+  bannerMobile: String
   bannerUrl: String
   orderByField: String
 }
@@ -17,6 +18,7 @@ input UpdateSellerAddonInput {
   exchangeReturnPolicy: String
   securityPrivacyPolicy: String
   banner: String
+  bannerMobile: String
   bannerUrl: String
   orderByField: String
 }
@@ -29,6 +31,7 @@ type SellerAddon {
   exchangeReturnPolicy: String
   securityPrivacyPolicy: String
   banner: String
+  bannerMobile: String
   bannerUrl: String
   orderByField: String
 }
