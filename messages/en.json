@@ -28,5 +28,6 @@
   "admin/loading.label": "Loading",
   "admin/discard.label": "Discard changes",
   "admin/cancel.label": "Cancel",
-  "admin/save.label": "Save"
+  "admin/save.label": "Save",
+  "admin/demo-warning": "Attention! This is a component created for demo purposes. Its maintenance is not officially supported by VTEX."
 }

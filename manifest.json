@@ -21,7 +21,8 @@
     "vtex.styleguide": "9.x",
     "vtex.css-handles": "1.x",
     "vtex.session-client": "1.x",
-    "vtex.file-manager-graphql": "0.x"
+    "vtex.file-manager-graphql": "0.x",
+    "ssesandbox04.demo-warning": "0.x"
   },
   "builders": {
     "node": "6.x",
@@ -81,9 +82,7 @@
   ],
   "billingOptions": {
     "type": "free",
-    "availableCountries": [
-      "*"
-    ],
+    "availableCountries": ["*"],
     "support": {
       "url": "https://support.vtex.com/hc/requests"
     }

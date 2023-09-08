@@ -9,6 +9,7 @@ import {
 } from '@vtex/admin-ui'
 import React from 'react'
 import { useIntl } from 'react-intl'
+import { DemoWarning } from 'ssesandbox04.demo-warning'
 
 import { messages } from '../../utils/messages'
 import SellerAddonsManager from './SellerAddonsManager'
@@ -21,6 +22,7 @@ const SellerAddonsPage = () => {
     <ThemeProvider>
       <ToastProvider>
         <Page>
+          <DemoWarning message={intl.formatMessage(messages.demoWarning)} />
           <PageHeader>
             <PageHeaderTop>
               <PageHeaderTitle>

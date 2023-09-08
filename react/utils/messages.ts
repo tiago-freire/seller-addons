@@ -83,4 +83,5 @@ export const messages = defineMessages({
   discardLabel: { id: 'admin/discard.label' },
   cancelLabel: { id: 'admin/cancel.label' },
   saveLabel: { id: 'admin/save.label' },
+  demoWarning: { id: 'admin/demo-warning' },
 })

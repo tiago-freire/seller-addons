@@ -1658,10 +1658,10 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.3.tgz#781d360c282436494b32fe7d9f7f8e64b3118aa3"
   integrity sha512-fbF6oTd4sGGy0xjHPKAt+eS2CrxJ3+6gQ3FGcBoIJR2TLAyCkCyI8JqZNy+FeON0AhVgNJoUumVoZQjBFUqHkw==
 
-"@vtex/api@6.45.19":
-  version "6.45.19"
-  resolved "https://registry.yarnpkg.com/@vtex/api/-/api-6.45.19.tgz#97b449850b517d6610e7123aa91caec2a29ae7b1"
-  integrity sha512-WUsAn1Oi+Z7Ih84DcRf4HQH85Mh+zO84L0ta7zuRyb13DoAEq2qMi0Mv6vZMd9BFWOCSD8AcTHVF/gZskwh9Yw==
+"@vtex/api@6.45.20":
+  version "6.45.20"
+  resolved "https://registry.yarnpkg.com/@vtex/api/-/api-6.45.20.tgz#c1090249a424fd700499de3fed0d80d99ff53332"
+  integrity sha512-O7RJWWr4PfvixNpc0GgQh85iKcv9j1IKkpApwJQSW/WzxoTgSrcjYHOVUmJ1GWWBmRV/qvB2VaV6Ow1QL3UOCQ==
   dependencies:
     "@types/koa" "^2.11.0"
     "@types/koa-compose" "^3.2.3"
@@ -5679,9 +5679,13 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-"ssesandbox04.seller-addons@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons":
-  version "0.1.2"
-  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons#9418189227d5954fe6c88719ced39d8f94166641"
+"ssesandbox04.demo-warning@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.demo-warning@0.0.1+build1694203862/public/@types/ssesandbox04.demo-warning":
+  version "0.0.1"
+  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.demo-warning@0.0.1+build1694203862/public/@types/ssesandbox04.demo-warning#437335903e4142818541b492bddc99573fa8fc92"
+
+"ssesandbox04.seller-addons@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.3+build1694033526/public/@types/ssesandbox04.seller-addons":
+  version "0.1.3"
+  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.3+build1694033526/public/@types/ssesandbox04.seller-addons#7fc89cebe258a30a0e14103ace7ad3bdc1f22c6f"
 
 sshpk@^1.7.0:
   version "1.17.0"

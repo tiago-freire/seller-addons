@@ -5374,9 +5374,13 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
-"ssesandbox04.seller-addons@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons":
-  version "0.1.2"
-  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.2+build1692287245/public/@types/ssesandbox04.seller-addons#9418189227d5954fe6c88719ced39d8f94166641"
+"ssesandbox04.demo-warning@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.demo-warning@0.0.1+build1694203862/public/@types/ssesandbox04.demo-warning":
+  version "0.0.1"
+  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.demo-warning@0.0.1+build1694203862/public/@types/ssesandbox04.demo-warning#437335903e4142818541b492bddc99573fa8fc92"
+
+"ssesandbox04.seller-addons@https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.3+build1694033526/public/@types/ssesandbox04.seller-addons":
+  version "0.1.3"
+  resolved "https://dev--campwayboxesandcases997.myvtex.com/_v/private/typings/linked/v1/ssesandbox04.seller-addons@0.1.3+build1694033526/public/@types/ssesandbox04.seller-addons#7fc89cebe258a30a0e14103ace7ad3bdc1f22c6f"
 
 ssf@~0.11.2:
   version "0.11.2"
@@ -5822,9 +5826,9 @@ verror@1.10.0:
   version "2.83.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-summary@2.83.1/public/@types/vtex.product-summary#5c8cdaaca7648462cad2fddc6742696fca57dcc8"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.0/public/@types/vtex.render-runtime":
-  version "8.134.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.0/public/@types/vtex.render-runtime#ee5a73993a75e45de60ccceac1ef74ab6b9202a3"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.1/public/@types/vtex.render-runtime":
+  version "8.134.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.1/public/@types/vtex.render-runtime#da48779c477fbef1521010718b0f779ee1ae1ffe"
 
 "vtex.responsive-layout@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.responsive-layout@0.1.4/public/@types/vtex.responsive-layout":
   version "0.1.4"
